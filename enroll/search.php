@@ -2,26 +2,24 @@
 require("../include/conn.php");
 $vsearch=$_POST['txtsearch'];
 ?>
-
-<table border="1">
+<table border="1" style="width: 80%; height: auto;" align=center>
 <tr>
 <td colspan="6" align=center>
-    <b>Student Records</b>    
+    <b>Enroll Students</b>    
 </td>
 </tr>
+
 <form action="search.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
-<tr>
-<td colspan="4">
-<input type="text" name="txtsearch" id="txtsearch">
+    <tr>
+        <td colspan="6" align=center>
+            <input type="text" name="txtsearch" id="txtsearch">
+            <input type="submit" value="Search Record" />
         </td>
-            <td align = center colspan="2">
-            <input type="submit" value="Search" />
-</td>
-</tr>
+    </tr>
 </form>
 
 <?php
-$sql = "SELECT * FROM tblstudent where fldstudentnumber='$vsearch' || fldlastname= '$vsearch' || fldfirstname= '$vsearch' || fldmiddlename= '$vsearch' || fldprogramofstudy= '$vsearch' order by fldindex";
+$sql = "SELECT * FROM tblstudent where fldstudentnumber='$vsearch' || fldlastname='$vsearch' || fldfirstname='$vsearch' || fldmiddlename='$vsearch'|| fldprogramofstudy='$vsearch' order by fldindex";
         $result = $conn->query($sql);
         if($result->num_rows > 0) 
         {
@@ -62,24 +60,23 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vsearch' || fldlastnam
                 ?>
                 </td>
                     
-                <td>
+                <td align=center>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='update.php?vid=<?php echo $vstudentnumber; ?>'">Update</button>
-                </td>
-                <td>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vstudentnumber; ?>'">Delete</button>
                 </td>
 
                 </tr>
                 <?php
             }
+        } else {
+            echo "<script>alert('No Records Found');</script>";
+            echo "<tr><td colspan = '6' align = center>No Records Found</tr></td>";
         }
-        else  { echo '<tr><td colspan="6" align="center">Record does not exist</td></tr>';}
 ?>
 <tr>
-<td colspan="5" align=center>
-    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='student.php'">Display All</button>
-    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='insert.php'">Insert</button>
-    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='student.php'">Back</button>
+<td colspan="6" align=center>
+    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='enroll.php'">Display All</button>
+    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../index.php'">Back</button>
 </td>
 </tr>
 
