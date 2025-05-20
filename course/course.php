@@ -25,7 +25,7 @@ $sql = "SELECT * FROM tblcourse order by fldindex";
         {
             while($row = $result->fetch_assoc())
             {
-                
+                $vcourseindex=$row['fldindex'];
                 $vcourse_code=$row['course_code'];			
                 $vcourse_title=$row['course_title'];	
                 $vunits=$row['units'];	
@@ -54,6 +54,9 @@ $sql = "SELECT * FROM tblcourse order by fldindex";
                 <td>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vcourse_code; ?>'">Delete</button>
                 </td>
+                <td>
+                <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='view.php?vid=<?php echo $vcourse_code; ?>'">View</button>
+                </td>
 
                 </tr>
                 <?php
@@ -62,10 +65,11 @@ $sql = "SELECT * FROM tblcourse order by fldindex";
 ?>
 <tr>
 <td colspan="5" align=center>
+     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Display All</button>
     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='insert.php'">Insert</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../tcpdf6/examples/aaarepcourse.php'">Print</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../index.php'">Back</button>
-    <a href="tcpdf6/examples/aaarepstudent.php" target="_blank"> Print</a>
+
 </td>
 </tr>
 
