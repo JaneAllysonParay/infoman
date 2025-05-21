@@ -2,7 +2,7 @@
 require("../include/conn.php");
 
 $vcourse_code = $_POST['txtcourse_code'];
-$vcourse_title = $_POST['txtcourse_title'];
+$vcourse_title = $_POST['txtcourse'];
 $vunits = $_POST['txtunits'];
 
 $vdup=0;
