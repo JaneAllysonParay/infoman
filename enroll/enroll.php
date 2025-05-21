@@ -76,7 +76,6 @@ $sql = "SELECT * FROM tblstudent order by fldindex desc";
 <tr>
 <td colspan="5" align=center>
     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='enroll.php'">Display All</button>
-    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='tcpdf6/examples/aaarepstudent.php'">Print</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../index.php'">Back</button>
 </td>
 </tr>

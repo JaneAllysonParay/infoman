@@ -30,7 +30,7 @@ $sql = "SELECT * FROM tblstudent where fldstudentnumber='$vstudentnumber'  order
         Middle Name: <?php echo $vmiddlename; ?><br>
         Program: <?php echo $vprogramofstudy; ?><br>
         <hr>
-     <table border="1" style="width: auto; height: auto;" align=center>
+     <table border="1">
 <tr>
 <td colspan="5" align=center>
     <b>Courses Enrolled To</b>    
@@ -48,7 +48,7 @@ $sql = "SELECT * FROM tbllist where fldstudentindex='$vstudentindex' order by fl
                 
                 $vcourseindex=$row['fldcourseindex'];			
                 
-                $sql1 = "SELECT * FROM tblcourse where fldindex='$vcourseindex' order by fldindex desc";
+                $sql1 = "SELECT * FROM tblcourse where fldindex='$vcourseindex' order by fldindex";
                 $result1 = $conn->query($sql1);
                 if($result1->num_rows > 0) 
                 {
