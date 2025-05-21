@@ -8,16 +8,15 @@ require("../include/conn.php");
 </td>
 </tr>
 
-</tr>
 <form action="search.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
-<tr>
-<td colspan="4">
-<input type="text" name="txtsearch" id="txtsearch">
+    <tr>
+        <td colspan="4" align=center>
+            <input type="text" name="txtsearch" id="txtsearch">
+            <input type="submit" value="Search Record" />
         </td>
-            <td align = center colspan="2">
-            <input type="submit" value="Search" />
-</td>
-</tr>
+    </tr>
+</form>
+
 <?php
 $sql = "SELECT * FROM tblcourse order by fldindex";
         $result = $conn->query($sql);
@@ -25,10 +24,11 @@ $sql = "SELECT * FROM tblcourse order by fldindex";
         {
             while($row = $result->fetch_assoc())
             {
-                $vcourseindex=$row['fldindex'];
-                $vcourse_code=$row['course_code'];			
+                
+                $vcourseindex=$row['fldindex'];			
+                $vcourse_code=$row['course_code'];	
                 $vcourse_title=$row['course_title'];	
-                $vunits=$row['units'];	
+                $vunits=$row['units'];
 	                
                 ?>
                 <tr>
@@ -48,13 +48,9 @@ $sql = "SELECT * FROM tblcourse order by fldindex";
                 ?>
                 </td>
                     
-                <td>
+                <td align=center>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='update.php?vid=<?php echo $vcourse_code; ?>'">Update</button>
-                </td>
-                <td>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='delete.php?vid=<?php echo $vcourse_code; ?>'">Delete</button>
-                </td>
-                <td>
                 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='view.php?vid=<?php echo $vcourse_code; ?>'">View</button>
                 </td>
 
@@ -65,11 +61,10 @@ $sql = "SELECT * FROM tblcourse order by fldindex";
 ?>
 <tr>
 <td colspan="5" align=center>
-     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Display All</button>
+    <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Display All</button>
     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='insert.php'">Insert</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../tcpdf6/examples/aaarepcourse.php'">Print</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../index.php'">Back</button>
-
 </td>
 </tr>
 
