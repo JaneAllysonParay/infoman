@@ -67,9 +67,9 @@ $sql = "SELECT * FROM tblcourse where course_code='$vsearch' || course_title='$v
 <td colspan="5" align=center>
 <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Display All</button>
     <button type="button" class="btn btn-warning btn-s" onClick="window.location.href='insert.php'">Insert</button>
-    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='tcpdf6/examples/aaarepcourse.php'">Print</button>
+    <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='../tcpdf6/examples/aaarepcourse.php'">Print</button>
     <button type="reset" class="btn btn-warning btn-s" onClick="window.location.href='course.php'">Back</button>
-    <a href="tcpdf6/examples/aaarepstudent.php" target="_blank"> Print</a>
+
 </td>
 </tr>
 
