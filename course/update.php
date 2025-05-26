@@ -1,6 +1,7 @@
 <?php
 require("../include/conn.php");
 $vcourse_code=$_REQUEST['vid'];
+$vcoursecodeold=$_REQUEST['vid'];
 
 $sql = "SELECT * FROM tblcourse WHERE course_code='$vcourse_code'  order by fldindex";
         $result = $conn->query($sql);
@@ -20,6 +21,8 @@ $sql = "SELECT * FROM tblcourse WHERE course_code='$vcourse_code'  order by fldi
 <html>
     <body>
     <form action="update-save.php" method="post" name="formadd" enctype="multipart/form-data" novalidate>
+        <input type="hidden" name="txtcoursecodeold" id="txtcoursecodeold" value="<?php echo $vcoursecodeold; ?>">
+        <input type="hidden" name="txtindex" id="txtindex" value="<?php echo $vindex; ?>">
         <table border="1">    
             <tr>
                 <td colspan="2" align=center>
@@ -31,7 +34,7 @@ $sql = "SELECT * FROM tblcourse WHERE course_code='$vcourse_code'  order by fldi
                 <label >Enter Course Code:</label>
                 </td>
                 <td>
-                <input readonly type="text" name="txtcourse_code" id="txtcourse_code" value="<?php echo $vcourse_code; ?>">
+                <input type="text" name="txtcourse_code" id="txtcourse_code" value="<?php echo $vcourse_code; ?>">
                 </td>
             </tr>
             
