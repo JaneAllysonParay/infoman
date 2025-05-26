@@ -9,7 +9,7 @@ $vcoursecodeold=$_POST['txtcoursecodeold'];
 $vindex=$_POST['txtindex'];
 
 $vdup=0;
-if($vcourse_code != $vcoursecodeold)
+if($vcourse_code == $vcoursecodeold)
 {
 
     $vdup = 0;
