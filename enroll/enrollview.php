@@ -90,7 +90,7 @@ $sql = "SELECT * FROM tbllist where fldstudentindex='$vstudentindex' order by fl
         } else {
         ?>
             <tr>
-                <td colspan="4" align="center">You have not enrolled to any courses.</td>
+                <td colspan="4" align="center">No courses enrolled.</td>
             </tr>
         <?php
         }

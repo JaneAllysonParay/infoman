@@ -21,7 +21,7 @@ require("../include/conn.php");
     </tr>
 </form>                               
 <?php
-$sql = "SELECT * FROM tblstudent order by fldindex desc";
+$sql = "SELECT * FROM tblstudent order by fldindex ";
         $result = $conn->query($sql);
         if($result->num_rows > 0) 
         {
